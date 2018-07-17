@@ -1,2 +1,13 @@
+body { background-color: #ccc; }
 
-/*# sourceMappingURL=style.css.map */
+.board { margin: 0 50px; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+
+.board h1 { font-size: 32px; }
+
+.board .create-column { background-color: blue; color: #fff; max-width: 100px; height: 50px; }
+
+.board .column-container { background-color: #000; color: white; display: flex; flex-direction: row; justify-content: center; align-items: center; }
+
+.board .column-container .column { background-color: red; margin: 0 10px; }
+
+.board .column-container .column h2 { color: black; text-align: center; }

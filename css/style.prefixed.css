@@ -1,0 +1,13 @@
+body { background-color: #ccc; }
+
+.board { margin: 0 50px; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; -ms-flex-direction: column; flex-direction: column; }
+
+.board h1 { font-size: 32px; }
+
+.board .create-column { background-color: blue; color: #fff; max-width: 100px; height: 50px; }
+
+.board .column-container { background-color: #000; color: white; display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+
+.board .column-container .column { background-color: red; margin: 0 10px; }
+
+.board .column-container .column h2 { color: black; text-align: center; }
