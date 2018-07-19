@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		var self = this;
 		this.id = randomString();
 		this.name = name;
-	 	this.element = generateTemplate('column-template', { name: this.name });
+	 	this.element = generateTemplate('column-template', { name: this.name, id: this.id });
 	 	// remove a column and add a card
 		this.element.querySelector('.column').addEventListener('click', function (event) {
   			if (event.target.classList.contains('btn-delete')) {
