@@ -1,13 +1,23 @@
-body { background-color: #ccc; }
+* { box-sizing: border-box; }
 
-.board { margin: 0 50px; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+body { background-color: #576574; }
 
-.board h1 { font-size: 32px; }
+.board { display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: #0abde3; padding: 10px 10px; margin: 30px auto; border-radius: 5px; }
 
-.board .create-column { background-color: blue; color: #fff; max-width: 100px; height: 50px; }
+.board h1 { font-size: 42px; text-shadow: 2px 2px #ccc; }
 
-.board .column-container { background-color: #000; color: white; display: flex; flex-direction: row; justify-content: center; align-items: center; }
+.board .create-column { font-size: 18px; background-color: blue; color: #fff; width: 150px; height: 50px; margin-bottom: 20px; }
 
-.board .column-container .column { background-color: red; margin: 0 10px; }
+.board .column-container { background-color: #c8d6e5; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; margin-bottom: 200px; }
+
+.board .column-container .column { background-color: #10ac84; margin: 0 5px; min-width: 275px; min-height: 300px; border: 1px solid #333; margin: 5px; display: flex; flex-direction: column; }
 
 .board .column-container .column h2 { color: black; text-align: center; }
+
+.board .column-container .column .add-card { background-color: #1dd1a1; font-size: 18px; text-align: center; }
+
+.board .column-container .column .btn-delete { position: relative; background-color: blue; color: #fff; width: 30px; height: 30px; }
+
+.board .card { background-color: #1dd1a1; border: 1px solid #000; }
+
+.board .card .card-description ul li { text-align: center; }

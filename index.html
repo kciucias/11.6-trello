@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Kanban board</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,15 +22,14 @@
         <div class="column-container"></div>
     </div>
   </script>
-
 -->
 
   <script id="column-template" type="x-tmpl-mustache">
     <div class="column">
-        <h2 class="column-title">{{ name }}</h2>
-        <ul id={{ id }} class="column-card-list"></ul>
         <button class="btn-delete">X</button>
+        <h2 class="column-title">{{ name }}</h2>
         <button class="add-card">Add a card</button>
+        <ul id={{ id }} class="column-card-list"></ul>
     </div>
   </script>
 

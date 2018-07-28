@@ -1,37 +1,80 @@
-body {
-	background-color: #ccc;
+* {
+  box-sizing: border-box; }
+
+  body {
+	background-color: #576574;
 }
 
 .board {
-	margin: 0 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background-color: #0abde3;
+	padding: 10px 10px;
+	margin: 30px auto;
+	border-radius: 5px;
 	h1 {
-		font-size: 32px;
+		font-size: 42px;
+		text-shadow: 2px 2px #ccc;
 	}
+	
 	.create-column {
+		font-size: 18px;
 		background-color: blue;
 		color: #fff;
-		max-width: 100px;
+		width: 150px;
 		height: 50px;
-	}
+		margin-bottom: 20px;
+	} 
+
+
 	.column-container {
-		background-color: #000;
-		color: white;
+		background-color: #c8d6e5;
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+		margin-bottom: 200px;
 		.column {
-			background-color: red;
-			margin: 0 10px;
+			background-color: #10ac84;
+			margin: 0 5px;
+			min-width: 275px;
+  			min-height: 300px;
+  			border: 1px solid #333;
+  			margin: 5px;
+  			display: flex;
+  			flex-direction: column;
 			h2 {
 				color: black;
 				text-align: center;
 			}
+			.add-card {
+				background-color: #1dd1a1;
+				font-size: 18px;
+				text-align: center;
+			}
+			.btn-delete {
+				position: relative;
+				background-color: blue;
+				color: #fff;
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
 
+	.card {
+		background-color: #1dd1a1;
+		border: 1px solid #000;
+		.card-description {
+			ul li {
+				text-align: center;
+			}
+			.btn-delete {
+
+			}
 
 		}
 	}

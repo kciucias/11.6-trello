@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    //create random ID for each card
 	function randomString() {
 	    var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
 	    var str = '';
@@ -55,8 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		var self = this;
 		this.id = randomString();
 		this.name = name;
-	 	this.element = generateTemplate('column-template', { name: this.name });
-	 	// remove a column and add a card
+	 	this.element = generateTemplate('column-template', { name: this.name, id: this.id});
 		this.element.querySelector('.column').addEventListener('click', function (event) {
   			if (event.target.classList.contains('btn-delete')) {
     			self.removeColumn();
@@ -76,12 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	//card 
-
 	function Card(description) {
   		var self = this;
   		this.id = randomString();
   		this.description = description;
-  		this.element = generateTemplate('card-template', { description: this.description }, 'li');
+  		this.element = generateTemplate('card-template', { description: this.description, id: this.id}, 'li');
 		this.element.querySelector('.card').addEventListener('click', function (event) {
   			event.stopPropagation();
   			if (event.target.classList.contains('btn-delete')) {
