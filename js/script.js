@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+	
+////////////////////////////////////////
+// FUNCTIONS
 
 	function randomString() {
 	    var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
@@ -7,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	        str += chars[Math.floor(Math.random() * chars.length)];
 	    }
 	    return str;
-	}
+	} 
+
 	function generateTemplate(name, data, basicElement) {
 		var template = document.getElementById(name).innerHTML;
 		var element = document.createElement(basicElement || 'div');
@@ -15,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		element.innerHTML = Mustache.render(template, data);
 		return element;
 	}
+
+	// drag & drop cards
 	function initSortable(id) {
 	  	var el = document.getElementById(id);
 	  	var sortable = Sortable.create(el, {
@@ -49,7 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 */
-	// column
+
+////////////////////////////////////////
+// BOARD 
+
+var board = {
+    name: 'Kanban Board',
+    addColumn: function(column) {
+      this.element.appendChild(column.element);
+      initSortable(column.id); 
+    },
+    element: document.querySelector('#board .column-container')
+};
+
+document.querySelector('#board .create-column').addEventListener('click', function() {
+	    var name = prompt('Enter a column name');
+	    var column = new Column(name);
+	    board.addColumn(column);
+	});
+	
+
+////////////////////////////////////////
+// COLUMN
+
     function Column(name) {
 		var self = this;
 		this.id = randomString();
@@ -65,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
   			}
 		});
 	}
+
 	Column.prototype = {
     	addCard: function(card) {
     		this.element.querySelector('ul').appendChild(card.element);
@@ -74,7 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
     	}
 	}
 
-	//card 
+////////////////////////////////////////
+// CARD
+
 	function Card(description) {
   		var self = this;
   		this.id = randomString();
@@ -93,23 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     	}
 	}
 
-	//board
 
-	var board = {
-	    name: 'Kanban Board',
-	    addColumn: function(column) {
-	      this.element.appendChild(column.element);
-	      initSortable(column.id); 
-	    },
-	    element: document.querySelector('#board .column-container')
-	};
-
-	document.querySelector('#board .create-column').addEventListener('click', function() {
-		    var name = prompt('Enter a column name');
-		    var column = new Column(name);
-		    board.addColumn(column);
-		});
-	
 
 	// CREATING COLUMNS
 	var todoColumn = new Column('To do');
